@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 import static org.openqa.selenium.By.*;
+
 public class LoginTest extends TestBase {
 
     @Test

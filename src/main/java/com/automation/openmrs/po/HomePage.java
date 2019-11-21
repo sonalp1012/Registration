@@ -1,6 +1,5 @@
 package com.automation.openmrs.po;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +11,6 @@ public class HomePage {
     public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-
 
     @FindBy(linkText = "Find Patient Record")
     public WebElement linkFindPatientRecord;
