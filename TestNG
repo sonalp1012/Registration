@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name= "Sanity check" >
+
+    <test name="HomeTest">
+        <classes>
+            <class name="HomeTest"></class>
+            <class name="LoginTest"></class>
+            <class name="RegisterTest"></class>
+        </classes>
+    </test>
+
+
+
+</suite>
