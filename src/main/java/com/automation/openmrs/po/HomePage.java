@@ -19,20 +19,20 @@ public class HomePage {
     public WebElement linkActiveVisits;
 
     @FindBy(linkText = "Register a patient")
-    public WebElement linkRegisterapatient;
+    public WebElement linkRegisterapatient; // Variable name should start with lowercase. Use pascal case. i.e. linkRegisterPatient -- HITESH
 
     @FindBy(className = "icon-home small")
     public WebElement linkHomeIcon;
 
     @FindBy(id = "loginButton")
-    public WebElement Loginbtn;
+    public WebElement Loginbtn; // Variable name should start with lowercase. Use pascal case. i.e. loginBtn -- HITESH
 
     //Create method for Home page objects
     public void clickOnFindPatientRecordLink() { linkFindPatientRecord.click(); }
     public void clickOnkActiveVisitsLink() { linkActiveVisits.click(); }
-    public void clickOnRegisteraPatientLink() { linkRegisterapatient.click(); }
+    public void clickOnRegisterPatientLink() { linkRegisterapatient.click(); }
     public void clickOnHomeIcon() {linkHomeIcon.click();}
-    public void clickOnLoginbtn() {Loginbtn.click();}
+    public void clickOnLoginBtn() {Loginbtn.click();}
 }
 
 

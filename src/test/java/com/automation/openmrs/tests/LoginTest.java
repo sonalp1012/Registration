@@ -11,7 +11,13 @@ public class LoginTest extends TestBase {
     @Test
     public void LoginTest() throws InterruptedException {
 
+        // If you are setting URL of the application in @BeforeSuite method, then instead of calling drive.get() method
+        // every time, try creating methods which clicks on UI buttons or links which can help you navigate to
+        // respective pages.
+        // -- HITESH
         driver.get("https://demo.openmrs.org/openmrs/login.htm");
+
+        // Like I have mentioned earlier. Implicit wait should be defined in @BeforeSuite -- HITESH
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         String title = driver.getTitle();
         System.out.println(title);
@@ -27,6 +33,10 @@ public class LoginTest extends TestBase {
             loginPage1.setPassword("admin123");
             loginPage1.clickOnRegistrationDesk();
             loginPage1.clickOnLoginBtn();
+
+            // Please read documentation of what ImplicitWait does. The below line make no sense,
+            // If you want to wait for a certain condition to finish then it's better to use
+            // ExplicitWait. -- HITESH
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
             //WebDriverWait wait = new WebDriverWait(driver,60);
@@ -50,6 +60,10 @@ public class LoginTest extends TestBase {
             loginPage2.setPassword("");
             loginPage2.clickOnRegistrationDesk();
             loginPage2.clickOnLoginBtn();
+
+                // Please read documentation of what ImplicitWait does. The below line make no sense,
+                // If you want to wait for a certain condition to finish then it's better to use
+                // ExplicitWait. -- HITESH
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
             //Capture error message and store in variable
@@ -70,6 +84,10 @@ public class LoginTest extends TestBase {
             loginPage3.setPassword("");
             loginPage3.clickOnRegistrationDesk();
             loginPage3.clickOnLoginBtn();
+
+                // Please read documentation of what ImplicitWait does. The below line make no sense,
+                // If you want to wait for a certain condition to finish then it's better to use
+                // ExplicitWait. -- HITESH
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
                 //Capture error message and store in variable
@@ -90,6 +108,10 @@ public class LoginTest extends TestBase {
             loginPage4.setPassword("admin123 ");
             loginPage4.clickOnRegistrationDesk();
             loginPage4.clickOnLoginBtn();
+
+                // Please read documentation of what ImplicitWait does. The below line make no sense,
+                // If you want to wait for a certain condition to finish then it's better to use
+                // ExplicitWait. -- HITESH
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
                 //Capture error message and store in variable
@@ -106,10 +128,18 @@ public class LoginTest extends TestBase {
             LoginPage loginPage5 = new LoginPage(driver);
             loginPage5.txtUserName.clear();
             loginPage5.setUserID("Admin1");
+
+            // Below clear line should be part of setPassword(String password) method.
+            // You should avoid using Element variables here since it's pure tests
+            // -- HITESH
             loginPage5.txtPassword.clear();
             loginPage5.setPassword("invalidpsw");
             loginPage5.clickOnRegistrationDesk();
             loginPage5.clickOnLoginBtn();
+
+                // Please read documentation of what ImplicitWait does. The below line make no sense,
+                // If you want to wait for a certain condition to finish then it's better to use
+                // ExplicitWait. -- HITESH
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
                 //Capture error message and store in variable
@@ -131,6 +161,10 @@ public class LoginTest extends TestBase {
             loginPage5.setPassword("Admin123");
             loginPage5.clickOnRegistrationDesk();
             loginPage5.clickOnLoginBtn();
+
+                // Please read documentation of what ImplicitWait does. The below line make no sense,
+                // If you want to wait for a certain condition to finish then it's better to use
+                // ExplicitWait. -- HITESH
             driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
             // Verify successfully logged in

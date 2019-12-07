@@ -8,6 +8,8 @@ public class RegisterTest extends TestBase {
 
     @Test
     public void RegisterTest() throws InterruptedException {
+        // Like I said earlier. This is not the way you should handle navigations.
+        // -- HITESH
         driver.get("https://demo.openmrs.org/openmrs/login.htm");
 
         //RegisterAPatient

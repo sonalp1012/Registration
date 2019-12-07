@@ -14,7 +14,7 @@ public class RegisterPage {
     }
 
     @FindBy(name = "Name")
-    public WebElement linkNameLable;
+    public WebElement linkNameLable; // Please consider typos as well. -- HITESH
 
     @FindBy(name = "givenName")
     public WebElement textGiveName;
@@ -59,7 +59,7 @@ public class RegisterPage {
     public WebElement textCountry;
 
     @FindBy(id = "postalCode")
-    public WebElement textpostalCode;
+    public WebElement textpostalCode; // Variable name should start with lowercase. Use pascal case. i.e. textPostalCode -- HITESH
 
     @FindBy(id = "phoneNumberLabel")
     public WebElement linkPhoneNumberLabel;
@@ -71,9 +71,16 @@ public class RegisterPage {
     public WebElement linkConfirmationLabel;
 
     @FindBy(id = "submit")
-    public WebElement linksubmitbtn;
+    public WebElement linksubmitbtn; // Variable name should start with lowercase. Use pascal case. i.e. linkSubmitBtn -- HITESH
 
     //@Hitesh can I put  set of Method e.g Click -in one method/ Set- in one method?
+    /*
+    You can. But it completely depends on how you are planning to use it. Just like "Login" example
+    I used to give you on this. It's upto you. Just make sure you don't end up adding so many methods.
+
+    Make it meaningful. -- HITESH
+     */
+
 
     // Register a Patient - Methods
     public void clickOnNameLink() {
@@ -82,6 +89,8 @@ public class RegisterPage {
     public void setGivenName(String givenName) {
         textGiveName.sendKeys(givenName);
     }
+
+    // Typos correction in below Method - HITESH
     public void setMidddleName(String middleName) {
         textMiddleName.sendKeys(middleName);
     }
@@ -92,6 +101,8 @@ public class RegisterPage {
         linkGenderLabel.click();
     }
     public void clickGender() {linkGender.click();}
+
+    // Typo correction in below method - HITESH
     public void clickOnBirthdateLable(){ linkBirthdateLabel.click(); }
     public void setBirthDay(String birthDay){
         txtBirthDay.sendKeys();
@@ -100,9 +111,13 @@ public class RegisterPage {
         Select birthdateMonth1 = new Select(linkBirthdateMonth);
         birthdateMonth1.selectByVisibleText(birthdateMonth);
     }
+
+    // Typo correction In below method - HITESH
     public void setBirhdateYear(String birthdateYear){
         txtBirhdateYear.sendKeys();
     }
+
+    // Method name should start with lowercase. Use pascal case. i.e. clickAddressLabel() -- HITESH
     public void clickAddresslabel(){
         linkAddressLabel.click();
     }
@@ -120,6 +135,8 @@ public class RegisterPage {
     public void clickConfirmationLabel(){
         linkConfirmationLabel.click();
     }
+
+    // Method name should start with lowercase. Use pascal case. i.e. clickSubmitBtn() -- HITESH
     public void clickSubmitbtn(){
         linksubmitbtn.click();
     }
