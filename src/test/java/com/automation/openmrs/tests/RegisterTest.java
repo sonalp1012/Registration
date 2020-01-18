@@ -14,16 +14,16 @@ public class RegisterTest extends TestBase {
         RegisterPage registerAPatientPage = new RegisterPage(driver);
         //registerAPatientPage.clickOnNameLink(); //Name link Already selected
         registerAPatientPage.setGivenName("John");
-        registerAPatientPage.setMidddleName("A");
+        registerAPatientPage.setMiddleName("A");
         registerAPatientPage.setFamilyName("Smith");
-        registerAPatientPage.clickOnGenderLable();
+        registerAPatientPage.clickOnGenderLabel();
         registerAPatientPage.clickGender(); // how do i select Gender value "selectbyvisible text?
-        registerAPatientPage.clickOnBirthdateLable();
+        registerAPatientPage.clickConfirmationLabel();
         registerAPatientPage.setBirthDay("01");
         registerAPatientPage.clickBirthdateMonth("January"); //how do i select Gender value
 
-        registerAPatientPage.setBirhdateYear("1975");
-        registerAPatientPage.clickAddresslabel();
+        registerAPatientPage.setBirthdateYear("1975");
+        registerAPatientPage.clickAddressLabel();
         registerAPatientPage.setAddress1("100 Ocean street");
         registerAPatientPage.setCityVillage("JerseryCity");
         registerAPatientPage.setStateProvince("NJ");
@@ -32,6 +32,6 @@ public class RegisterTest extends TestBase {
         registerAPatientPage.clickPhoneNumberLabel();
         //registerAPatientPage.setPhoneNumber("gffjg");  // ?
         registerAPatientPage.clickConfirmationLabel();
-        registerAPatientPage.clickSubmitbtn();
+        registerAPatientPage.clickSubmitBtn();
     }
 }

@@ -1,10 +1,14 @@
 package com.automation.openmrs.tests;
+
 import com.automation.openmrs.base.TestBase;
 import com.automation.openmrs.po.LoginPage;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
-import static org.openqa.selenium.By.*;
+
+import static org.openqa.selenium.By.id;
 
 public class LoginTest extends TestBase {
 
@@ -19,7 +23,7 @@ public class LoginTest extends TestBase {
 
         // TC1 - Verify valid error message displays  when USER NAME  field is BLANK
             @Test(priority = 0)
-            public void invalidLogin_BlankUserID() {
+            public void invalidLoginBlankUserID() {
             LoginPage loginPage1 = new LoginPage(driver);
             loginPage1.txtUserName.clear();
             loginPage1.setUserID("");
@@ -27,10 +31,7 @@ public class LoginTest extends TestBase {
             loginPage1.setPassword("admin123");
             loginPage1.clickOnRegistrationDesk();
             loginPage1.clickOnLoginBtn();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-            //WebDriverWait wait = new WebDriverWait(driver,60);
-            //wait.until(ExpectedConditions.textToBePresentInElement(By.id("error-message"), "Invalid username/password. Please try again."));
 
             // Capture error message and store in variable
             String actual_msg=driver.findElement(id("error-message")).getText();
@@ -38,11 +39,13 @@ public class LoginTest extends TestBase {
             Assert.assertEquals(actual_msg, expect_msg);
             System.out.println("Valid error message displayed for blank user name" +actual_msg);
 
+            WebDriverWait wait = new WebDriverWait (driver, 20);
+
         }
 
         // TC2 - Verify valid error message displays  when PASSWORD  field is BLANK
             @Test(priority = 1)
-            public void invalidLogin_BlankPassword() {
+            public void invalidLoginBlankPassword() {
             LoginPage loginPage2 = new LoginPage(driver);
             loginPage2.txtUserName.clear();
             loginPage2.setUserID("Admin");
@@ -50,19 +53,21 @@ public class LoginTest extends TestBase {
             loginPage2.setPassword("");
             loginPage2.clickOnRegistrationDesk();
             loginPage2.clickOnLoginBtn();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
 
             //Capture error message and store in variable
                 String actual_msg=driver.findElement(id("error-message")).getText();
                 String expect_msg="Invalid username/password. Please try again.";
                 Assert.assertEquals(actual_msg, expect_msg);
                 System.out.println("Valid error message displayed for blank password" +actual_msg);
+
+                WebDriverWait wait = new WebDriverWait (driver, 20);
         }
 
 
         //TC3 -Verify valid error message displays  when PASSWORD AND USER NAME  fields ARE BLANK
             @Test(priority = 2)
-            public void invalidLogin_BlankUserNamePassword() {
+            public void invalidLoginBlankUserNamePassword() {
             LoginPage loginPage3 = new LoginPage(driver);
             loginPage3.txtUserName.clear();
             loginPage3.setUserID("");
@@ -70,7 +75,7 @@ public class LoginTest extends TestBase {
             loginPage3.setPassword("");
             loginPage3.clickOnRegistrationDesk();
             loginPage3.clickOnLoginBtn();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
 
                 //Capture error message and store in variable
                 String actual_msg=driver.findElement(id("error-message")).getText();
@@ -78,11 +83,13 @@ public class LoginTest extends TestBase {
                 Assert.assertEquals(actual_msg, expect_msg);
                 System.out.println("Valid error message displayed for blank user name and password" +actual_msg);
 
+                WebDriverWait wait = new WebDriverWait (driver, 20);
+
         }
 
         //TC4 - Verify valid error message displays  when user enter  INVALID USER NAME
             @Test(priority = 3)
-            public void invalidLogin_InvalidUserName() {
+            public void invalidLoginInvalidUserName() {
             LoginPage loginPage4 = new LoginPage(driver);
             loginPage4.txtUserName.clear();
             loginPage4.setUserID("invaliduser");
@@ -90,7 +97,7 @@ public class LoginTest extends TestBase {
             loginPage4.setPassword("admin123 ");
             loginPage4.clickOnRegistrationDesk();
             loginPage4.clickOnLoginBtn();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
 
                 //Capture error message and store in variable
                 String actual_msg=driver.findElement(id("error-message")).getText();
@@ -98,11 +105,14 @@ public class LoginTest extends TestBase {
                 Assert.assertEquals(actual_msg, expect_msg);
                 System.out.println("Valid error message displayed for invalidusername" +actual_msg);
 
+                WebDriverWait wait = new WebDriverWait (driver, 20);
+
+
         }
 
         // TC5- Verify valid error message displays  when user enter  INVALID PASSWORD
             @Test(priority = 4)
-            public void invalidLogin_InvalidPassword() {
+            public void invalidLoginInvalidPassword() {
             LoginPage loginPage5 = new LoginPage(driver);
             loginPage5.txtUserName.clear();
             loginPage5.setUserID("Admin1");
@@ -118,11 +128,13 @@ public class LoginTest extends TestBase {
                 Assert.assertEquals(actual_msg, expect_msg);
                 System.out.println("Valid error message displayed for invalidpsw" +actual_msg);
 
+                WebDriverWait wait = new WebDriverWait (driver, 20);
+
         }
 
 
         //TC7- Login with valid credential
-            @Test(priority = 4)
+            @Test(priority = 5)
             public void validLogin() {
             LoginPage loginPage5 = new LoginPage(driver);
             loginPage5.txtUserName.clear();

@@ -14,7 +14,7 @@ public class RegisterPage {
     }
 
     @FindBy(name = "Name")
-    public WebElement linkNameLable;
+    public WebElement linkNameLabel;
 
     @FindBy(name = "givenName")
     public WebElement textGiveName;
@@ -59,7 +59,7 @@ public class RegisterPage {
     public WebElement textCountry;
 
     @FindBy(id = "postalCode")
-    public WebElement textpostalCode;
+    public WebElement textPostalCode;
 
     @FindBy(id = "phoneNumberLabel")
     public WebElement linkPhoneNumberLabel;
@@ -71,28 +71,28 @@ public class RegisterPage {
     public WebElement linkConfirmationLabel;
 
     @FindBy(id = "submit")
-    public WebElement linksubmitbtn;
+    public WebElement linkSubmitBtn;
 
     //@Hitesh can I put  set of Method e.g Click -in one method/ Set- in one method?
 
     // Register a Patient - Methods
     public void clickOnNameLink() {
-        linkNameLable.click();
+        linkNameLabel.click();
     }
     public void setGivenName(String givenName) {
         textGiveName.sendKeys(givenName);
     }
-    public void setMidddleName(String middleName) {
+    public void setMiddleName(String middleName) {
         textMiddleName.sendKeys(middleName);
     }
     public void setFamilyName(String familyNameName) {
         textFamilyName.sendKeys(familyNameName);
     }
-    public void clickOnGenderLable() {
+    public void clickOnGenderLabel() {
         linkGenderLabel.click();
     }
     public void clickGender() {linkGender.click();}
-    public void clickOnBirthdateLable(){ linkBirthdateLabel.click(); }
+    public void clickOnBirthdateLabel(){ linkBirthdateLabel.click(); }
     public void setBirthDay(String birthDay){
         txtBirthDay.sendKeys();
     }
@@ -100,10 +100,9 @@ public class RegisterPage {
         Select birthdateMonth1 = new Select(linkBirthdateMonth);
         birthdateMonth1.selectByVisibleText(birthdateMonth);
     }
-    public void setBirhdateYear(String birthdateYear){
-        txtBirhdateYear.sendKeys();
+    public void setBirthdateYear(String birthdateYear){ txtBirhdateYear.sendKeys();
     }
-    public void clickAddresslabel(){
+    public void clickAddressLabel(){
         linkAddressLabel.click();
     }
     public void setAddress1(String address1){ textAddress1.sendKeys(); }
@@ -112,7 +111,7 @@ public class RegisterPage {
     }
     public void setStateProvince(String stateProvince){ textStateProvince.sendKeys(); }
     public void setCountry(String country){ textCountry.sendKeys(); }
-    public void setPostalCode(String postalCode){ textpostalCode.sendKeys(); }
+    public void setPostalCode(String postalCode){ textPostalCode.sendKeys(); }
     public void clickPhoneNumberLabel(){ linkPhoneNumberLabel.click(); }
     public void setPhoneNumber(){
         textPhoneNumber.sendKeys();
@@ -120,8 +119,7 @@ public class RegisterPage {
     public void clickConfirmationLabel(){
         linkConfirmationLabel.click();
     }
-    public void clickSubmitbtn(){
-        linksubmitbtn.click();
+    public void clickSubmitBtn(){ linkSubmitBtn.click();
     }
 
 

@@ -10,18 +10,23 @@ public class HomeTest extends TestBase {
     public void HomeTest() throws InterruptedException {
         driver.get("https://demo.openmrs.org/openmrs/referenceapplication/home.page");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
     }
 
-    
+         // @Hitesh : called method "Login" from LoginTest but it is not working
+         @Test (priority = 0)
+         public void login() {
+         LoginTest lg = new LoginTest();
+         lg.validLogin();
+    }
+
         @Test (priority = 1)
-        public void homepagelinks() {
+        public void Homepagelinks() {
         HomePage homePage = new HomePage(driver);
         homePage.clickOnFindPatientRecordLink();
         homePage.clickOnHomeIcon();
         homePage.clickOnkActiveVisitsLink();
         homePage.clickOnHomeIcon();
-        homePage.clickOnRegisteraPatientLink();
+        homePage.clickOnRegisterAPatient();
 
         String actualUrl="https://demo.openmrs.org/openmrs/referenceapplication/home.page";
         String expectedUrl= driver.getCurrentUrl();
