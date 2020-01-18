@@ -32,7 +32,7 @@ public class HomePage {
     public void clickOnkActiveVisitsLink() { linkActiveVisits.click(); }
     public void clickOnRegisterAPatient() { linkRegisterAPatient.click(); }
     public void clickOnHomeIcon() {linkHomeIcon.click();}
-    public void clickOnLoginBtn() {loginBtn.click();}
+    //public void clickOnLoginBtn() {loginBtn.click();}
 }
 
 

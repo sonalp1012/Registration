@@ -2,15 +2,9 @@ package com.automation.openmrs.tests;
 import com.automation.openmrs.base.TestBase;
 import com.automation.openmrs.po.HomePage;
 import org.testng.annotations.Test;
-import java.util.concurrent.TimeUnit;
 
+@Test
 public class HomeTest extends TestBase {
-
-    @Test
-    public void HomeTest() throws InterruptedException {
-        driver.get("https://demo.openmrs.org/openmrs/referenceapplication/home.page");
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
 
          // @Hitesh : called method "Login" from LoginTest but it is not working
          @Test (priority = 0)
@@ -20,7 +14,7 @@ public class HomeTest extends TestBase {
     }
 
         @Test (priority = 1)
-        public void Homepagelinks() {
+        public void homePageLinks() {
         HomePage homePage = new HomePage(driver);
         homePage.clickOnFindPatientRecordLink();
         homePage.clickOnHomeIcon();

@@ -5,21 +5,11 @@ import com.automation.openmrs.po.LoginPage;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.concurrent.TimeUnit;
-
 import static org.openqa.selenium.By.id;
 
+@Test
 public class LoginTest extends TestBase {
-
-    @Test
-    public void LoginTest() throws InterruptedException {
-
-        driver.get("https://demo.openmrs.org/openmrs/login.htm");
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        String title = driver.getTitle();
-        System.out.println(title);
-    }
 
         // TC1 - Verify valid error message displays  when USER NAME  field is BLANK
             @Test(priority = 0)
@@ -143,7 +133,6 @@ public class LoginTest extends TestBase {
             loginPage5.setPassword("Admin123");
             loginPage5.clickOnRegistrationDesk();
             loginPage5.clickOnLoginBtn();
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
             // Verify successfully logged in
             String actualUrl = "https://demo.openmrs.org/openmrs/referenceapplication/home.page";
