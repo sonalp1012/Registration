@@ -59,7 +59,7 @@ public class LoginTest extends TestBase {
             @Test(priority = 2)
             public void invalidLoginBlankUserNamePassword() {
             LoginPage loginPage3 = new LoginPage(driver);
-            loginPage3.txtUserName.clear();
+                loginPage3.txtUserName.clear();
             loginPage3.setUserID("");
             loginPage3.txtPassword.clear();
             loginPage3.setPassword("");
@@ -104,9 +104,7 @@ public class LoginTest extends TestBase {
             @Test(priority = 4)
             public void invalidLoginInvalidPassword() {
             LoginPage loginPage5 = new LoginPage(driver);
-            loginPage5.txtUserName.clear();
             loginPage5.setUserID("Admin1");
-            loginPage5.txtPassword.clear();
             loginPage5.setPassword("invalidpsw");
             loginPage5.clickOnRegistrationDesk();
             loginPage5.clickOnLoginBtn();
