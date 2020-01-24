@@ -25,9 +25,11 @@ public class LoginPage {
 
     //create method for login objects
     public void setUserID(String userID){
+        txtUserName.clear();
         txtUserName.sendKeys(userID);
     }
     public void setPassword(String password) {
+        txtPassword.clear();
         txtPassword.sendKeys(password);
     }
     public void clickOnRegistrationDesk() {
